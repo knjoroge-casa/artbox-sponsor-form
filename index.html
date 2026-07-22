@@ -458,13 +458,10 @@
     btn.textContent = "Sending…";
     fetch(SCRIPT_URL, {
       method: "POST",
-      body: JSON.stringify(d)   // no custom headers → no CORS preflight
+      mode: "no-cors",          // fire-and-forget: we can't read the reply, but the script runs
+      body: JSON.stringify(d)
     })
-    .then(function(r){ return r.json(); })
-    .then(function(res){
-      if (res && res.ok){ showSuccess(d); }
-      else { throw new Error("Server said no"); }
-    })
+    .then(function(){ showSuccess(d); })
     .catch(function(){
       btn.disabled = false;
       btn.textContent = "Confirm my sponsorship";
