@@ -407,9 +407,6 @@
     document.getElementById("ok-name").textContent  = d.name;
     document.getElementById("ok-boxes").textContent = d.boxes + (d.boxes === 1 ? " ArtBox" : " ArtBoxes") + " (" + fmt(d.total) + ")";
     document.getElementById("ok-email").textContent = d.email;
-    document.getElementById("ok-reach").textContent = d.boxes === 1
-      ? "school your box reaches"
-      : "schools your boxes reach";
     document.getElementById("form-area").style.display = "none";
     document.getElementById("success").classList.add("show");
     document.getElementById("success").scrollIntoView({behavior:"smooth", block:"center"});
