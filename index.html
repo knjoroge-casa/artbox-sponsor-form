@@ -303,7 +303,7 @@
       <h3>Asante sana!</h3>
       <p><b id="ok-name"></b>, your sponsorship of <b id="ok-boxes"></b> is recorded.</p>
       <p>A copy is on its way to <b id="ok-email"></b>.</p>
-      <p style="margin-top:10px;color:var(--muted)">The ArtBox team will confirm your M-PESA payment and be in touch about which school your box reaches.</p>
+      <p style="margin-top:10px;color:var(--muted)">The ArtBox team will confirm your M-PESA payment and be in touch about which <span id="ok-reach">school your box reaches</span>.</p>
     </div>
 
     <p class="foot">
@@ -407,6 +407,9 @@
     document.getElementById("ok-name").textContent  = d.name;
     document.getElementById("ok-boxes").textContent = d.boxes + (d.boxes === 1 ? " ArtBox" : " ArtBoxes") + " (" + fmt(d.total) + ")";
     document.getElementById("ok-email").textContent = d.email;
+    document.getElementById("ok-reach").textContent = d.boxes === 1
+  ? "school your box reaches"
+  : "schools your boxes reach";
     document.getElementById("form-area").style.display = "none";
     document.getElementById("success").classList.add("show");
     document.getElementById("success").scrollIntoView({behavior:"smooth", block:"center"});
